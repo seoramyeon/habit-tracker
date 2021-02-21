@@ -6,17 +6,17 @@ export default class Habit extends Component {
 	};
 
 	handleIncrement = (event) => {
-		console.log(event);
+		// console.log(event);
 		this.setState({count: this.state.count + 1})
 	};
 
-	handleDecrement = event => {
+	handleDecrement = (event) => {
 		const count = this.state.count - 1;
 		this.setState({count: count < 0 ? 0 : count})
 	};
 
 	render() {
-		console.log(this.props);
+		// console.log(this.props);
 		const {name, count} = this.props.habit;
 		return (
 			<li className="habit">
