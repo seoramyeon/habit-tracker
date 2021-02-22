@@ -9,11 +9,35 @@ class Habits extends Component {
 			{ id: 3, name:'Coding', count: 0 },
 		],
 	};
+
+	handleIncrement = (habit) => {
+		console.log('handleIncrement', habit.name);
+		const habits = [...this.state.habits];
+		const index = habits.indexOf(habit);
+		habits[index].count++;
+		this.setState({ habits: habits });
+	};
+
+	handleDecrement = (habit) => {
+		console.log('handleDecrement', habit.name);
+	};
+
+	handleDelete = (habit) => {
+		console.log('handleDelete', habit.name);
+	};
+
+
 	render() {
 		return (
 			<ul>
 				{this.state.habits.map(habit => {
-					return <Habit key={habit.id} habit={habit}/>
+					return <Habit 
+					key={habit.id} 
+					habit={habit} 
+					onIncrement={this.handleIncrement}
+					onDecrement={this.handleDecrement}
+					onDelete={this.handleDelete}
+					/>
 				})}
 			</ul>
 		);
