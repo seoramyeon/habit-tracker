@@ -6,8 +6,8 @@ import '@fortawesome/fontawesome-free/js/all.js';
 
 ReactDOM.render(
   <React.StrictMode> 
-    {/* 배포 버전에서는 strict mode가 활성화 되지 않기때문에 사용자 콘솔에서는 볼 수 없음 */}
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>, 
+  // 콘솔에서 2번씩 호출해서 확인함.
   document.getElementById('root')
 );

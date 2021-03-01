@@ -1,20 +1,21 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
-export default class Habit extends Component {
-	handleIncrement = (habit) => {
+export default class Habit extends PureComponent {
+	handleIncrement = () => {
 		this.props.onIncrement(this.props.habit);
 	};
 
-	handleDecrement = (habit) => {
+	handleDecrement = () => {
 		this.props.onDecrement(this.props.habit);
 	};
 
-	handleDelete = (habit) => {
+	handleDelete = () => {
 		this.props.onDelete(this.props.habit);
 	};
 
 	render() {
 		// console.log(this.props);
+		console.log('habit > this.props :', this.props)
 		const {name, count} = this.props.habit;
 		return (
 			<li className="habit">
